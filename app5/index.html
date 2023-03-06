@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <script type="module" crossorigin="" src="/app6/assets/main.js"></script>
+  <link rel="stylesheet" href="/app/assets/main.css">
+</head>
+
+<body>
+  <div id="app" data-v-app="">
+    <div class="container">
+      <h3>App5: HTML Forms</h3>
+      <form>
+        <fieldset>
+          <legend>User Input Text Controls</legend>
+          <div class="row">
+            <div class="col-auto"><label for="text" class="form-label">Enter some text</label><input id="text"
+                class="form-control" type="text"></div>
+            <div class="col-auto"><label for="search" class="form-label">Search</label><input id="search"
+                class="form-control" type="search"></div>
+            <div class="col-auto"><label for="textarea" class="form-label">Multi-Line Text</label><textarea
+                id="textarea" class="form-control" rows="3"></textarea></div>
+          </div>
+          <div class="row">
+            <legend>Validated Text Boxes</legend>
+            <div class="col-auto"><label for="email">Enter an email</label> <input class="form-control" type="email"
+                id="email" placeholder="example@email.com" size="30" required></div>
+            <div class="col-auto"><label for="phone">Enter your phone number</label> <input class="form-control"
+                type="tel" id="phone" name="phone" placeholder="123-555-8080" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                required>
+            </div>
+            <div class="col-auto"><label for="url">Enter a URL:</label> <input class="form-control" type="url"
+                name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required>
+            </div>
+            <div class="col-auto"><label for="pass">Enter Password</label> <input class="form-control" type="password"
+                id="pass" name="password" minlength="8" required>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <div class="row">
+        <form class="col-6">
+          <fieldset>
+            <legend>Programmable Selection Controls</legend>
+            <div class="row">
+              <div id="check" class="col-auto"><label for="check" class="form-check-label">Select all that
+                  apply:</label>
+                <div class="form-check"><input id="one" class="form-check-input" type="checkbox" name="mood" value="one"
+                    checked=""><label for="one">I am happy</label></div>
+                <div class="form-check form-check-inline"><input id="two" class="form-check-input" name="mood"
+                    type="checkbox" value="two"><label for="two">I am sad</label></div>
+                <div class="form-check"><input id="three" class="form-check-input" name="mood" type="checkbox"
+                    value="three"><label for="three">What's going on?</label></div>
+              </div>
+              <div id="choice" class="col-auto"><label for="choice" class="form-check-label">Choose Wisely...</label>
+                <div class="form-check"><input id="immortality" class="form-check-input" type="radio" name="choice"
+                    value="immortality" checked=""><label for="immortality">Immortality</label></div>
+                <div class="form-check"><input id="unlimited" class="form-check-input" type="radio" name="choice"
+                    value="unlimited"><label for="unlimited">Unlimited Apple Sauce</label></div>
+                <div class="form-check"><input id="backflip" class="form-check-input" type="radio" name="choice"
+                    value="backflip"><label for="backflip">Ability to do one backflip</label></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-auto"><label for="color" class="form-label">Type a color</label><input list="color-list"
+                  id="color" class="form-control" name="color"><datalist id="color-list">
+                  <option value="White"></option>
+                  <option value="Blue"></option>
+                  <option value="Teal"></option>
+                  <option value="Green"></option>
+                  <option value="Orange"></option>
+                </datalist></div>
+              <div class="col-auto"><label for="matter-select" class="form-label">Select a State of
+                  Matter</label><select id="matter-select" class="form-select" name="matter">
+                  <option value="-">--Select--</option>
+                  <option value="S">Solid</option>
+                  <option value="L">Liquid</option>
+                  <option value="G">Gas</option>
+                </select></div>
+            </div>
+          </fieldset>
+        </form>
+        <form class="col-6">
+          <fieldset>
+            <legend>Numeric Selection and Display Controls</legend>
+            <div class="row">
+              <div class="col-auto"><label for="year-picker" class="form-label">What year was the War of
+                  1812?</label><input id="year-picker" class="form-control" type="number" name="year" min="1811"
+                  max="1813"></div>
+              <div class="col-auto"><label for="adjust" class="form-label">Adjust the Blue Circle</label><input
+                  id="adjust" class="form-range" type="range" name="adjust" min="0" max="100"></div>
+            </div>
+            <div class="row">
+              <div class="col-auto"><label for="full" class="form-label">Half full or half empty?</label><progress
+                  id="full" max="100" value="50"> 50% </progress></div>
+              <div class="col-auto"><label for="tired" class="form-label">Tired Meter</label><meter id="tired" min="0"
+                  max="100" low="25" high="75" optimum="100" value="20"></meter></div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="row">
+        <form class="col-6">
+          <fieldset>
+            <legend>Pickers</legend>
+            <div class="row">
+              <div class="col-auto"><label for="birth-date" class="form-label">Enter birth date:</label><input
+                  id="birth-date" class="form-control" type="date" name="birth-date" min="1920-01-01" max="2020-01-01">
+              </div>
+              <div class="col-auto"><label for="sleep-time" class="form-label">Enter sleep time:</label><input
+                  id="sleep-time" class="form-control" type="time" name="sleep-time" min="9:00" max="17:00"></div>
+              <div class="col-auto"><label for="reservation-time" class="form-label">Enter reservation:</label><input
+                  id="reservation-time" class="form-control" type="datetime-local" name="reservation-time"
+                  min="2023-02-01T9:00" max="2023-05-31T20:00"></div>
+            </div>
+            <div class="row">
+              <div class="col-auto"><label for="color" class="form-label">Choose favorite color:</label><input
+                  id="color" class="form-control form-control-color" type="color" name="color"></div>
+              <div class="col-auto"><label for="file-choice" class="form-label">Choose file:</label><input
+                  id="file-choice" class="form-control" type="file" name="file-choice"></div>
+            </div>
+          </fieldset>
+        </form>
+        <form class="col-6">
+          <fieldset>
+            <legend>Buttons</legend>
+            <div><input id="submit" class="btn btn-outline-info m-3" type="submit" value="Submit">
+              <input id="reset" class="btn btn-outline-info m-3" type="reset" value="Reset">
+              <input id="normal" class="btn btn-outline-info m-3" type="button" value="Normal">
+            </div>
+
+            <div><button class="btn btn-outline-info m-3" type="submit">Submit</button>
+              <button class="btn btn-outline-info m-3" type="reset">Reset</button>
+              <button class="btn btn-outline-info m-3" type="button">Normal</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <form>
+        <fieldset>
+          <legend>Hidden Input Controls</legend>
+          <div class="row">
+            <div class="col-auto"><label for="hidden-control" class="form-label">Hidden control</label><input
+                id="hidden-control" class="form-control" type="hidden" value="Why did you reveal me?"></div>
+          </div><button class="btn btn-outline-info m-3" type="button">Don't press</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
